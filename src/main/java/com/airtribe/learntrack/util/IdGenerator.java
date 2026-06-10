@@ -18,5 +18,4 @@ public class IdGenerator {
     public static String getNextEnrollmentId(){
         return "ENR-" + (++enrolmentCounter);
     }
-
 }
