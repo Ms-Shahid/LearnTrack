@@ -3,14 +3,20 @@ import java.util.UUID;
 
 public class IdGenerator {
 
-    protected static String uuid = UUID.randomUUID().toString();
+    private static int studentCounter = 0;
+    private static int courseCounter = 0;
+    private static int enrolmentCounter = 0;
 
     public static String getNextStudentId(){
-        return UUID.randomUUID().toString();
+        return "STU-" + (++studentCounter);
     }
 
     public static String getNextCourseId(){
-        return UUID.randomUUID().toString();
+        return "CRS-" + (++courseCounter);
+    }
+
+    public static String getNextEnrollmentId(){
+        return "ENR-" + (++enrolmentCounter);
     }
 
 }

@@ -2,13 +2,11 @@ package com.airtribe.learntrack.entity;
 
 public class Student extends Person{
 
-    private String studentId;
     private String batch;
     private boolean isActive;
 
     public Student(String id, String firstName, String lastName, String email, String batch) {
-        this.studentId = id;
-        super(firstName, lastName, email);
+        super(id, firstName, lastName, email);
         this.batch = batch;
     }
 
@@ -21,11 +19,11 @@ public class Student extends Person{
     }
 
     public String getStudentId() {
-        return studentId;
+        return getId();
     }
 
     public void setStudentId(String studentId) {
-        this.studentId = studentId;
+        this.setId(studentId);
     }
 
     public String getBatch() {
@@ -44,5 +42,8 @@ public class Student extends Person{
         isActive = active;
     }
 
-
+    @Override
+    public String getDisplayName(){
+        return super.getFirstName() + " " + super.getLastName();
+    }
 }
